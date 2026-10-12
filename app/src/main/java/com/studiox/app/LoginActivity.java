@@ -1,31 +1,34 @@
 package com.studiox.app;
 
-import android.animation.ObjectAnimator;
-import android.animation.ValueAnimator;
+import android.content.Intent;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.View;
-import android.view.animation.Animation;
-import android.view.animation.AnimationUtils;
-import android.view.animation.LinearInterpolator;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+
 public class LoginActivity extends AppCompatActivity {
-    private ImageView xLogo;
+
     private EditText etEmail, etPassword;
     private Button btnLogin, btnGoogle, btnApple;
     private TextView tvRegister;
+    private FirebaseAuth mAuth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-        xLogo = findViewById(R.id.xLogo);
+        mAuth = FirebaseAuth.getInstance();
+
         etEmail = findViewById(R.id.etEmail);
         etPassword = findViewById(R.id.etPassword);
         btnLogin = findViewById(R.id.btnLogin);
@@ -33,50 +36,43 @@ public class LoginActivity extends AppCompatActivity {
         btnApple = findViewById(R.id.btnApple);
         tvRegister = findViewById(R.id.tvRegister);
 
-        Animation floatAnim = AnimationUtils.loadAnimation(this, R.anim.float_x);
-        xLogo.startAnimation(floatAnim);
+        btnLogin.setOnClickListener(v -> loginUser());
+        tvRegister.setOnClickListener(v -> {
+            startActivity(new Intent(LoginActivity.this, RegisterActivity.class));
+        });
+        btnGoogle.setOnClickListener(v -> 
+            Toast.makeText(this, "Google Sign In akan datang...", Toast.LENGTH_SHORT).show());
+        btnApple.setOnClickListener(v -> 
+            Toast.makeText(this, "Apple Sign In akan datang...", Toast.LENGTH_SHORT).show());
+    }
 
-        ObjectAnimator glowAnim = ObjectAnimator.ofFloat(xLogo, "alpha", 0.7f, 1.0f);
-        glowAnim.setDuration(1200);
-        glowAnim.setRepeatMode(ValueAnimator.REVERSE);
-        glowAnim.setRepeatCount(ValueAnimator.INFINITE);
-        glowAnim.setInterpolator(new LinearInterpolator());
-        glowAnim.start();
+    private void loginUser() {
+        String email = etEmail.getText().toString().trim();
+        String password = etPassword.getText().toString().trim();
 
-        ObjectAnimator rotateAnim = ObjectAnimator.ofFloat(xLogo, "rotation", -3f, 3f);
-        rotateAnim.setDuration(2000);
-        rotateAnim.setRepeatMode(ValueAnimator.REVERSE);
-        rotateAnim.setRepeatCount(ValueAnimator.INFINITE);
-        rotateAnim.start();
+        if (TextUtils.isEmpty(email)) {
+            etEmail.setError("Emel diperlukan");
+            return;
+        }
+        if (TextUtils.isEmpty(password)) {
+            etPassword.setError("Kata laluan diperlukan");
+            return;
+        }
 
-        btnLogin.setOnClickListener(new View.OnClickListener() {
-            @Override public void onClick(View v) {
-                String email = etEmail.getText().toString().trim();
-                String pass = etPassword.getText().toString().trim();
-                if (email.isEmpty() || pass.isEmpty()) {
-                    Toast.makeText(LoginActivity.this, "Sila isi emel & kata laluan", Toast.LENGTH_SHORT).show();
-                    return;
+        mAuth.signInWithEmailAndPassword(email, password)
+            .addOnCompleteListener(this, task -> {
+                if (task.isSuccessful()) {
+                    FirebaseUser user = mAuth.getCurrentUser();
+                    Toast.makeText(LoginActivity.this, 
+                        "Log masuk berjaya! Selamat datang " + user.getEmail(), 
+                        Toast.LENGTH_SHORT).show();
+                    startActivity(new Intent(LoginActivity.this, DashboardActivity.class));
+                    finish();
+                } else {
+                    Toast.makeText(LoginActivity.this, 
+                        "Log masuk gagal: " + task.getException().getMessage(), 
+                        Toast.LENGTH_LONG).show();
                 }
-                Toast.makeText(LoginActivity.this, "Log masuk berjaya!", Toast.LENGTH_SHORT).show();
-            }
-        });
-
-        btnGoogle.setOnClickListener(new View.OnClickListener() {
-            @Override public void onClick(View v) {
-                Toast.makeText(LoginActivity.this, "Membuka Google Sign-In...", Toast.LENGTH_SHORT).show();
-            }
-        });
-
-        btnApple.setOnClickListener(new View.OnClickListener() {
-            @Override public void onClick(View v) {
-                Toast.makeText(LoginActivity.this, "Membuka Apple Sign-In...", Toast.LENGTH_SHORT).show();
-            }
-        });
-
-        tvRegister.setOnClickListener(new View.OnClickListener() {
-            @Override public void onClick(View v) {
-                Toast.makeText(LoginActivity.this, "Buka skrin Daftar...", Toast.LENGTH_SHORT).show();
-            }
-        });
+            });
     }
 }

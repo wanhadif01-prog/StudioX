@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "827319136826",
+    "project_id": "studiox-ac9ad",
+    "storage_bucket": "studiox-ac9ad.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:827319136826:android:cd38f00246b17537f47b03",
+        "android_client_info": {
+          "package_name": "com.studiox.app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDpLA9fp3RC232g5jQ_IXZ2jU3pIlW4Z-Y"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
