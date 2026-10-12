@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="bg_dark">#0A0A12</color>
+    <color name="cyan">#06B6D4</color>
+    <color name="pink">#EC4899</color>
+    <color name="purple">#8B5CF6</color>
+    <color name="purple_light">#A78BFA</color>
+    <color name="text_gray">#64748B</color>
+    <color name="text_white">#F1F5F9</color>
+    <string name="app_name">StudioX</string>
+    <style name="AppTheme" parent="Theme.AppCompat.NoActionBar">
+        <item name="android:windowBackground">#0A0A12</item>
+        <item name="android:statusBarColor">#0A0A12</item>
+        <item name="colorPrimary">#8B5CF6</item>
+    </style>
+</resources>

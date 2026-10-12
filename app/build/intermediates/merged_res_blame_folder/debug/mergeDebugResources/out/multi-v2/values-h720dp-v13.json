@@ -1,0 +1,19 @@
+{
+    "logs": [
+        {
+            "outputFile": "com.studiox.app-mergeDebugResources-29:/values-h720dp-v13/values-h720dp-v13.xml",
+            "map": [
+                {
+                    "source": "/data/data/com.termux/files/home/.gradle/caches/9.8.1/transforms/53f4b52a3efc1ed943d10e7cc3ff769f/transformed/appcompat-1.6.1/res/values-h720dp-v13/values-h720dp-v13.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "66",
+                        "endOffsets": "117"
+                    }
+                }
+            ]
+        }
+    ]
+}

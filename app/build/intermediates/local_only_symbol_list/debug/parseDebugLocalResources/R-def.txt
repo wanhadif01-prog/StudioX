@@ -1,0 +1,24 @@
+R_DEF: Internal format may change without notice
+local
+anim float_x
+color bg_dark
+color cyan
+color pink
+color purple
+color purple_light
+color text_gray
+color text_white
+drawable btn_primary_bg
+drawable glow_circle
+drawable input_bg
+drawable x_logo_vector
+id btnApple
+id btnGoogle
+id btnLogin
+id etEmail
+id etPassword
+id tvRegister
+id xLogo
+layout activity_login
+string app_name
+style AppTheme

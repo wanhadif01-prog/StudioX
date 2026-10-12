@@ -1,0 +1,26 @@
+[
+    {
+        "merged": "com.studiox.app-debug-31:/anim_float_x.xml.flat",
+        "source": "com.studiox.app-main-33:/anim/float_x.xml"
+    },
+    {
+        "merged": "com.studiox.app-debug-31:/drawable_input_bg.xml.flat",
+        "source": "com.studiox.app-main-33:/drawable/input_bg.xml"
+    },
+    {
+        "merged": "com.studiox.app-debug-31:/drawable_x_logo_vector.xml.flat",
+        "source": "com.studiox.app-main-33:/drawable/x_logo_vector.xml"
+    },
+    {
+        "merged": "com.studiox.app-debug-31:/drawable_glow_circle.xml.flat",
+        "source": "com.studiox.app-main-33:/drawable/glow_circle.xml"
+    },
+    {
+        "merged": "com.studiox.app-debug-31:/layout_activity_login.xml.flat",
+        "source": "com.studiox.app-main-33:/layout/activity_login.xml"
+    },
+    {
+        "merged": "com.studiox.app-debug-31:/drawable_btn_primary_bg.xml.flat",
+        "source": "com.studiox.app-main-33:/drawable/btn_primary_bg.xml"
+    }
+]
