@@ -1,37 +1,236 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#0A0A12"
-    android:orientation="vertical"
-    android:padding="24dp"
-    android:gravity="center">
+    android:fillViewport="true">
 
-    <TextView
-        android:id="@+id/tvGreeting"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hai, User 👋"
-        android:textColor="#F1F5F9"
-        android:textSize="24sp"
-        android:textStyle="bold" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Selamat datang ke StudioX"
-        android:textColor="#64748B"
-        android:textSize="14sp"
-        android:layout_marginTop="8dp" />
-
-    <Button
-        android:id="@+id/btnLogout"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="54dp"
-        android:text="Log Keluar"
-        android:textColor="#FFFFFF"
-        android:textStyle="bold"
-        android:background="@drawable/btn_primary_bg"
-        android:layout_marginTop="40dp" />
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="20dp">
 
-</LinearLayout>
+        <TextView
+            android:id="@+id/tvGreeting"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Hai, User 👋"
+            android:textColor="#F1F5F9"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            android:layout_marginTop="20dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Jom bina sesuatu yang hebat hari ini!"
+            android:textColor="#64748B"
+            android:textSize="13sp"
+            android:layout_marginTop="6dp" />
+
+        <!-- Menu Grid -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="24dp">
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="0dp"
+                android:layout_height="110dp"
+                android:layout_weight="1"
+                android:layout_marginEnd="8dp"
+                app:cardBackgroundColor="#15151F"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="0dp"
+                xmlns:app="http://schemas.android.com/apk/res-auto">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:gravity="center">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="💻"
+                        android:textSize="28sp" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Editor Kod"
+                        android:textColor="#E2E8F0"
+                        android:textSize="12sp"
+                        android:layout_marginTop="6dp" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="0dp"
+                android:layout_height="110dp"
+                android:layout_weight="1"
+                android:layout_marginStart="8dp"
+                app:cardBackgroundColor="#15151F"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="0dp"
+                xmlns:app="http://schemas.android.com/apk/res-auto">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:gravity="center">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="🤖"
+                        android:textSize="28sp" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="AI Assistant"
+                        android:textColor="#E2E8F0"
+                        android:textSize="12sp"
+                        android:layout_marginTop="6dp" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="16dp">
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="0dp"
+                android:layout_height="110dp"
+                android:layout_weight="1"
+                android:layout_marginEnd="8dp"
+                app:cardBackgroundColor="#15151F"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="0dp"
+                xmlns:app="http://schemas.android.com/apk/res-auto">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:gravity="center">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="🔨"
+                        android:textSize="28sp" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Build APK"
+                        android:textColor="#E2E8F0"
+                        android:textSize="12sp"
+                        android:layout_marginTop="6dp" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="0dp"
+                android:layout_height="110dp"
+                android:layout_weight="1"
+                android:layout_marginStart="8dp"
+                app:cardBackgroundColor="#15151F"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="0dp"
+                xmlns:app="http://schemas.android.com/apk/res-auto">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:gravity="center">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="📁"
+                        android:textSize="28sp" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Projek Saya"
+                        android:textColor="#E2E8F0"
+                        android:textSize="12sp"
+                        android:layout_marginTop="6dp" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+        </LinearLayout>
+
+        <!-- Projek Terkini -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Projek Terkini"
+            android:textColor="#F1F5F9"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            android:layout_marginTop="24dp" />
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            app:cardBackgroundColor="#15151F"
+            app:cardCornerRadius="14dp"
+            app:cardElevation="0dp"
+            xmlns:app="http://schemas.android.com/apk/res-auto">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="14dp"
+                android:gravity="center_vertical">
+                <TextView
+                    android:layout_width="42dp"
+                    android:layout_height="42dp"
+                    android:text="K"
+                    android:textColor="#FFFFFF"
+                    android:textStyle="bold"
+                    android:textSize="16sp"
+                    android:gravity="center"
+                    android:background="#8B5CF6" />
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:layout_marginStart="12dp">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="MyApp"
+                        android:textColor="#F1F5F9"
+                        android:textSize="13sp"
+                        android:textStyle="bold" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Kotlin"
+                        android:textColor="#64748B"
+                        android:textSize="11sp" />
+                </LinearLayout>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Semalam"
+                    android:textColor="#64748B"
+                    android:textSize="11sp" />
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <Button
+            android:id="@+id/btnLogout"
+            android:layout_width="match_parent"
+            android:layout_height="54dp"
+            android:text="LOG KELUAR"
+            android:textColor="#FFFFFF"
+            android:textStyle="bold"
+            android:background="@drawable/btn_primary_bg"
+            android:layout_marginTop="30dp" />
+
+    </LinearLayout>
+</ScrollView>
